@@ -43,9 +43,10 @@ Vagrant.configure("2") do |config|
   end
 
   # Ansible provisioning 
-  # config.vm.provision "ansible" do |ansible|
-  #   ansible.playbook = "playbook.yml"
-  #   ansible.inventory_path = "inventory.ini"
-  # end
+  config.vm.provision "ansible" do |ansible|
+      ansible.playbook = "ansible/play/playbook.yml"
+      ansible.inventory_path = "ansible/inventory.ini"
+      ansible.compatibility_mode = "2.0"
+  end
 
 end
